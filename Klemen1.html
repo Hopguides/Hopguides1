@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Our Website</title>
+    <style>
+         textarea {
+        width: 100%;
+        height: 150px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        resize: vertical;
+        .character-image.highlighted {
+            border: 6px solid blue;  /* You can change the color or style of the border as you like */
+            box-shadow: 0 0 10px blue;  /* Optional: Adds a glow effect around the highlighted image */
+        }
+    }
+    body {
+    font-family: 'Inter', sans-serif;
+    /* ... other styles ... */
+}
+
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .admin-login {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+    border-radius: 25px;  /* Adjust this value for more or less roundedness */
+    padding: 10px 20px;  /* Additional padding to make the button look better */
+    cursor: pointer;     /* Changes the cursor to a hand when hovering over the button */
+    border: none;        /* Removes the default border */
+    background-color: #17368d;  /* A blue color for the button (you can change this) */
+    color: white;        /* White text color */
+    transition: background-color 0.3s;  /* Smooth transition effect for hover */
+}
+
+button:hover {
+    background-color: #0056b3;  /* Darker blue color when hovering over the button */
+}
+
+
+        .description {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+        
+        .photo-gallery {
+    display: flex;
+    flex-wrap: wrap;  /* Allows the images to wrap to the next line if there's not enough space */
+    gap: 10px;  /* Provides a gap between the images */
+}
+
+.character-image {
+    width: 100px;  /* Adjust this value based on your desired image width */
+    height: 100px;  /* Adjust this value based on your desired image height */
+    object-fit: cover;  /* Ensures images cover the given dimensions without distortion */
+    border-radius: 10px;  /* Optional: Gives the images rounded corners */
+}
+
+    </style>
+   
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Hopguides</h1>
+        <p>
+            Thank you for visiting our website. We are delighted to have you here and hope you find our content useful and informative.
+        </p>
+
+        <div class="admin-login">
+            <h2>Admin Login</h2>
+            <form action="/login" method="post">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username">
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+
+        <div class="textboxes">
+            <h2>Text Boxes</h2>
+
+            <label for="useCases">Use Cases:</label>
+<select id="useCases" onchange="showDescription(this.value)">
+    <option value="0">Select a Use Case...</option>
+    <option value="1">Welcome Video (Check-In and Check-Out Procedures)</option>
+    <option value="2">Safety and Security</option>
+    <option value="3">Amenities Tour</option>
+    <option value="4">Room Features</option>
+    <option value="5">Local Attractions</option>
+    <option value="6">Transportation Guide</option>
+    <option value="7">Cultural Etiquette</option>
+    <option value="8">Dining Options</option>
+    <option value="9">Event Calendar</option>
+    <option value="10">How to's</option>
+    <option value="13">Eco-Friendly Initiatives</option>
+    <option value="14">Kids Activities</option>
+    <option value="15">Seasonal Guides</option>
+    <option value="16">Special Services</option>
+    <option value="17">History and Architecture</option>
+</select>
+
+
+<label for="character">Character:</label>
+<select id="character">
+    <option value="0">Select a Character...</option>
+    <option value="1">Sam Swaney</option>
+    <option value="2">Isabella Rossi</option>
+    <option value="3">Lorenzo Furlan</option>
+    <option value="4">Maria Silva</option>
+    <option value="5">Johann Bauer</option>
+    <option value="6">Nia Jones</option>
+    <option value="7">Esperanza Gomez</option>
+    <option value="8">Diego Martinez</option>
+    <option value="9">Sophie Leblanc</option>
+    <option value="10">Samuel Agyei</option>
+</select>
+
+<div class="photo-gallery">
+    <a href="video/Sam.mp4" target="_blank"><img id="imgSam" src="images/Sam.jpg" alt="Sam Swaney" class="character-image"></a>
+    <a href="video/Isabella.mp4" target="_blank"><img id="imgIsabella" src="images/Isabella.jpg" alt="Isabella Rossi" class="character-image"></a>
+    <a href="video/Lorenzo.mp4" target="_blank"><img id="imgLorenzo" src="images/Lorenzo.jpg" alt="Lorenzo Furlan" class="character-image"></a>
+    <a href="video/Maria.mp4" target="_blank"><img id="imgMaria" src="images/Maria.jpg" alt="Maria Silva" class="character-image"></a>
+    <a href="video/Johann.mp4" target="_blank"><img id="imgJohann" src="images/Johann.jpg" alt="Johann Bauer" class="character-image"></a>
+    <a href="video/Nia.mp4" target="_blank"><img id="imgNia" src="images/Nia.jpg" alt="Nia Jones" class="character-image"></a>
+    <a href="video/Esperanza.mp4" target="_blank"><img id="imgEsperanza" src="images/Esperanza.jpg" alt="Esperanza Gomez" class="character-image"></a>
+    <a href="video/Diego.mp4" target="_blank"><img id="imgDiego" src="images/Diego.jpg" alt="Diego Martinez" class="character-image"></a>
+    <a href="video/Sophie.mp4" target="_blank"><img id="imgSophie" src="images/Sophie.jpg" alt="Sophie Leblanc" class="character-image"></a>
+    <a href="video/Samuel.mp4" target="_blank"><img id="imgSamuel" src="images/Samuel.jpg" alt="Samuel Agyei" class="character-image"></a>
+</div>
+
+<label for="language">Language:</label>
+<select id="language">
+    <option value="0">Select a Language...</option>
+    <option value="1">English</option>
+    <option value="2">German</option>
+    <option value="3">Italian</option>
+    <option value="4">Spanish</option>
+    <option value="5">French</option>
+</select>
+
+        </div>
+
+        <div class="description" id="description">
+            <!-- Description will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        const descriptions = {
+            1: `<textarea>Hello and welcome to [Property Name]! We're genuinely excited to have you here. Let's quickly touch on a few essentials to make your arrival seamless. Once you're here, our reception desk is where you'll start. They'll guide you through the check-in process. You'll be given access to your room, either through a key card or a digital method. Please remember that check-in starts from [Time, e.g., 3 PM], and we'd appreciate it if you could check out by [Time, e.g., 11 AM]. Of course, we're always here to help, so if you have any questions or need flexibility, don't hesitate to ask. Welcome to [Property Name], and we hope you have a memorable stay.</textarea>`,
+            2: `<textarea>Safety first, right? At [Property Name], we genuinely believe that. I want to guide you through some key safety features. Our property has clearly marked emergency exits on every floor. Do take a moment to check the evacuation plan in your room. And for your valuables, each room has a secure safe. It's straightforward to use, but we're just a call away if you need help. And just so you know, we've got a 24/7 security system in place, ensuring your peace of mind. Your comfort and security are our top priorities.</textarea>`,
+            3: `<textarea>Now, let's talk about the fun stuff - our amenities! Right here at [Property Name], we've created spaces for relaxation, activity, and indulgence. Imagine taking a dip in our refreshing pool or keeping up with your fitness goals in our modern gym. And for those moments when you just want to unwind and treat yourself, our spa offers a range of therapies. There's so much to experience and enjoy here. So, go ahead, explore, and make the most of your stay.</textarea>`,
+            4: `<textarea>Hello again! Let's familiarize you with the comfort and convenience we've packed into each room at [Property Name]. Every room is equipped with modern amenities to make your stay truly seamless. Whether it's adjusting the room's temperature for your comfort, enjoying a variety of entertainment on the television, or brewing a fresh cup of coffee in the morning, we've got you covered. And if you're unsure about how to use anything, don't hesitate. We're just a call away, always ready to assist.</textarea>`,
+            5: `<textarea>Stepping out and exploring? [Property Name] is perfectly situated to give you a taste of the best attractions around. Whether you're in the mood for historical sites, shopping sprees, local dining, or just a leisurely walk in nature, we're surrounded by experiences waiting to be discovered. And if you need recommendations or directions, our team is well-versed with the local gems. Don't miss out on making memories while you're here."</textarea>`,
+            6: `<textarea>Navigating a new place can sometimes be daunting, but at [Property Name], we aim to make it effortless for you. Whether you're looking to get to the city center, a popular tourist spot, or just need to know the best way to travel around, we've got the information. From shuttle services to public transportation tips, we're here to guide you. And if you ever find yourself in need of a taxi or rideshare, just reach out. Let's make your travels smooth and enjoyable.</textarea>`,
+            7: `<textarea>One of the joys of travel is immersing oneself in a new culture. Here at [Property Name], we're nestled in a rich tapestry of traditions and customs. If you're unfamiliar with our local etiquette, I'm here to share a few tips. From the way we greet one another to dining customs, there are little nuances that make our culture unique. Embracing these can enrich your experience and connect you deeper with the locals. And if you ever find yourself uncertain or curious about something, please ask. We love sharing our heritage and ensuring you feel right at home.</textarea>`,
+            8: `<textarea>Food is more than just sustenance; it's an experience, especially here at [Property Name]. Our on-site dining options are curated to tantalize your taste buds and introduce you to local flavors. Whether you're looking for a hearty breakfast, a light snack, or a gourmet dinner, our chefs are passionate about serving you the best. And for those special evenings or celebrations, we offer a diverse wine and beverage list. Every meal here is a journey, and we're excited for you to embark on it.</textarea>`,
+            9: `<textarea>There's always something happening at [Property Name]. From live music evenings to culinary workshops, art exhibitions to local festivals, our event calendar is bustling with activities. Whether you're staying with us for business or leisure, we encourage you to partake in these experiences. It's a wonderful opportunity to mingle, learn, and create memories. For a detailed rundown of upcoming events during your stay, our front desk or concierge team will be delighted to assist. Let's make every moment count.</textarea>`,
+            10: `<textarea>Hello again! We understand that sometimes the array of modern amenities and technology can be a tad overwhelming. Whether you're trying to connect to our high-speed Wi-Fi, access on-demand movies, or simply adjust the room lighting, we've ensured that everything is intuitive. However, if you ever find yourself scratching your head, don't worry. We're just a phone call away, ready to guide you through any process. Your comfort and convenience are paramount to us.</textarea>`,
+            13: `<textarea>In today's world, sustainability is not just a choice; it's a responsibility. Here at [Property Name], we're deeply committed to eco-friendly practices. From energy-saving measures in our rooms, waste reduction initiatives, to supporting local and organic produce in our kitchens, we're constantly striving to reduce our carbon footprint. It's our way of giving back to the environment and ensuring a greener tomorrow. When you choose to stay with us, you're not just picking a destination; you're endorsing a sustainable future.</textarea>`,
+            14: `<textarea>Traveling with little ones? We've got you covered! [Property Name] is proud to offer a range of activities tailored just for kids. Whether it's our dedicated play area, interactive workshops, or kid-friendly menus, we've taken every step to ensure our youngest guests have a memorable stay. And for parents, we understand the need for some 'me-time'. Our trained staff is here to engage and entertain your kids, giving you those precious moments of relaxation. Here, family time is always special.</textarea>`,
+            15: `<textarea>Every season brings its own charm to [Property Name]. Whether you're joining us in the vibrant bloom of spring, the golden warmth of summer, the crisp embrace of fall, or the cozy blanket of winter, there's always something special in store. Our seasonal guides are curated to help you make the most of your visit, highlighting events, activities, and experiences unique to each time of year. Dive into seasonal flavors at our restaurant, partake in festivities, or simply explore the ever-changing beauty of our surroundings. Embrace the season and let it elevate your stay.</textarea>`,
+            16: `<textarea>Every guest is unique, and at [Property Name], we believe in tailoring experiences to match. Beyond the standard offerings, we provide a range of special services designed for those seeking that extra touch of luxury and convenience. From personal concierge assistance, bespoke dining experiences, to private tours and excursions, our team is dedicated to crafting moments that'll stay with you long after you leave. All you have to do is express a wish, and we'll go above and beyond to make it come true.</textarea>`,
+            17: `<textarea>Beneath the modern comforts and amenities of [Property Name] lies a rich tapestry of history and architectural marvel. Every brick, corridor, and archway tells a story. From [specific historical event or figure] to the inspiration behind our [specific architectural feature], there's a legacy waiting to be discovered. We invite you to not just stay, but to journey through time with us, understanding the roots that make our property more than just a destination. Feel free to inquire for guided tours or more insights.</textarea>`
+        };
+    
+        function showDescription(value) {
+            document.getElementById('description').innerHTML = descriptions[value] || ''; // Ensure a default value in case a non-matching value is passed
+        }
+        
+    </script>
+    <script>
+        function highlightImage(character) {
+            const images = document.querySelectorAll('.character-image');
+            images.forEach(img => img.classList.remove('highlighted'));
+            
+            const imgId = 'img' + character;
+            const selectedImg = document.getElementById(imgId);
+            if (selectedImg) {
+                selectedImg.classList.add('highlighted');
+            }
+        }
+    
+        document.getElementById('character').addEventListener('change', function() {
+            highlightImage(this.options[this.selectedIndex].text);
+        });
+    </script>
+    </body>
+    </html>
+    
+ <button id="generateVideo">Generate Video</button>
+   
+</body>
+
+</html>
